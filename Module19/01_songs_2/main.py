@@ -1,3 +1,12 @@
+def total_time(count_songs):
+    time = 0
+    for i_songs in range(count_songs):
+        print('Название {0} песни:'.format(i_songs + 1), end=' ')
+        name_song = input()
+        time += violator_songs[name_song]
+    print('Общее время звучания песен: {0} минуты'.format(round(time, 2)))
+
+
 violator_songs = {
     'World in My Eyes': 4.86,
     'Sweetest Perfection': 4.43,
@@ -10,4 +19,5 @@ violator_songs = {
     'Clean': 5.83
 }
 
-# TODO здесь писать код
+count_songs = int(input('Сколько песен выбрать? '))
+total_time(count_songs)
