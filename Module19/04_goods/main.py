@@ -24,4 +24,14 @@ store = {
     ],
 }
 
-# TODO здесь писать код
+
+goods_summ = dict()
+for i_goods in goods:
+    goods_summ[i_goods] = {'quantity' : 0,'price': 0}
+    if goods[i_goods] in store:
+        for j_goods in range(len(store[goods[i_goods]])):
+            goods_summ[i_goods]['quantity'] += store[goods[i_goods]][j_goods]['quantity']
+            goods_summ[i_goods]['price'] += store[goods[i_goods]][j_goods]['quantity'] * store[goods[i_goods]][j_goods]['price']
+
+for i_key in goods_summ:
+    print('{0} — {1} штук, стоимость {2} рубля'.format(i_key, goods_summ[i_key]['quantity'], goods_summ[i_key]['price']))

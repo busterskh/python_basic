@@ -1,3 +1,21 @@
+def interests(dict):
+    interests = set([
+                     j
+                     for i_dict in dict
+                     for j in dict[i_dict]['interests']
+    ])
+    return interests
+
+
+def long_surname(dict):
+    string = ''
+    for i in dict:
+        string += dict[i]['surname']
+    long = len(string)
+
+    return long
+
+
 students = {
     1: {
         'name': 'Bob',
@@ -19,26 +37,8 @@ students = {
     }
 }
 
+pairs = [(i, students[i]['age']) for i in students]
 
-def f(dict):
-    lst = []
-    string = ''
-    for i in dict:
-        lst += (dict[i]['interests'])
-        string += dict[i]['surname']
-    cnt = 0
-    for s in string:
-        cnt += 1
-    return lst, cnt
-
-
-pairs = []
-for i in students:
-    pairs += (i, students[i]['age'])
-
-
-my_lst = f(students)[0]
-l = f(students)[1]
-print(my_lst, l)
-
-# TODO исправить код
+print('Список пар "ID студента — возраст": {0}'.format(pairs))
+print('Полный список интересов всех студентов: {0} '
+      '\nОбщая длина всех фамилий студентов: {1}'.format(interests(students), long_surname(students)))
