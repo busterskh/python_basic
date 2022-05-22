@@ -23,7 +23,6 @@ def frequency_analysis(all_letters):
         for letter, count in letters_dict.items():
             letters_dict[letter] /= all_letters
             outcoming_file.write(f'{letter} {str(letters_dict[letter])[:5]}\n')
-    outcoming_file.close()
 
     with open('analysis.txt', 'r') as output_file:
         text = output_file.read()
@@ -33,6 +32,5 @@ def frequency_analysis(all_letters):
 with open('text.txt', 'r') as incoming_text:
     file_text = incoming_text.read()
     print(f'Содержимое файла text.txt:\n{file_text}')
-incoming_text.close()
 letters = dict()
 count_letter(file_text)

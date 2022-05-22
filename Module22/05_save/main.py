@@ -46,18 +46,15 @@ def main():
         with open(file_path, 'w') as output_file:
             output_file.write(text)
         print('Файл успешно сохранён!')
-        output_file.close()
 
         with open(file_path, 'r') as read_output_file:
             file_text = read_output_file.read()
             print(f'Содержимое файла: {file_text}')
-        read_output_file.close()
 
     if overwrite:
         with open(file_path, 'w') as output_file:
             output_file.write(text)
         print('Файл успешно перезаписан!')
-        output_file.close()
 
 
 main()
